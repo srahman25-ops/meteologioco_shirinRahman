@@ -2,6 +2,10 @@
 
 Brisa: aplicación meteorológica de Shirin Rahman, hecha con HTML, CSS y JavaScript.
 
+## Página web
+
+[Abrir Brisa](https://srahman25-ops.github.io/meteologioco_shirinRahman/)
+
 ## Funciones
 
 - Búsqueda de ciudades y geolocalización.
