@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="meteo.css">
+    <title>Brisa | Tu tiempo ahora</title>
+</head>
+<body>
+    <div id="cielo" class="weather-scene" aria-hidden="true">
+        <div class="sky-stars"></div>
+        <div class="sky-orb"></div>
+        <div class="sky-cloud sky-cloud-one"></div>
+        <div class="sky-cloud sky-cloud-two"></div>
+        <div class="sky-cloud sky-cloud-three"></div>
+        <div class="sky-fog"></div>
+        <div id="precipitacion" class="sky-precipitation"></div>
+        <div class="sky-wind"><i></i><i></i><i></i></div>
+    </div>
+    <main class="app-shell">
+        <section class="hero-panel">
+            <div class="topbar">
+                <p class="brand">
+                    <svg class="brand-symbol" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+                        <circle cx="29" cy="21" r="10" fill="currentColor" class="brand-sun"/>
+                        <path d="M29 5V2M14 10l-3-3M44 10l3-3M12 21H8M46 21h3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M7 31h32c9 0 9-12 2-12M5 39h39M13 47h18c8 0 8-8 3-8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <span>brisa<span class="brand-caption">EL CIELO CONTIGO</span></span>
+                </p>
+            </div>
+
+            <div class="hero-copy">
+                <p class="eyebrow">METEO EN DIRECTO</p>
+                <h1 id="tituloPrincipal">El cielo de<br><em>ahora mismo.</em></h1>
+                <p id="temperaturaPrincipal" class="hero-temperature" hidden></p>
+                <p id="descripcionPrincipal" class="intro">Busca una ciudad o activa tu ubicación para descubrir cómo está el cielo.</p>
+                <button id="btnTiempo" class="location-button" type="button">
+                    <span class="button-icon">⌖</span>
+                    <span>Consultar mi tiempo</span>
+                </button>
+                <div class="search-divider"><span>o consulta otro sitio</span></div>
+                <form id="formCiudad" class="city-search">
+                    <label class="sr-only" for="ciudad">Nombre de la ciudad</label>
+                    <input id="ciudad" type="search" placeholder="Ej.: Madrid, París..." autocomplete="off" required>
+                    <button type="submit" aria-label="Buscar ciudad">→</button>
+                </form>
+                <p class="brand-tagline">Tu tiempo, estés donde estés</p>
+                <p id="mensaje" class="status-message" aria-live="polite">Elige una ubicación para empezar.</p>
+            </div>
+
+            <div class="sun-decoration" aria-hidden="true">
+                <span class="sun"></span>
+                <span class="cloud cloud-one"></span>
+                <span class="cloud cloud-two"></span>
+                <span class="breeze breeze-one"></span>
+                <span class="breeze breeze-two"></span>
+                <span class="breeze breeze-three"></span>
+            </div>
+        </section>
+
+        <section id="resultado" class="weather-panel" aria-live="polite">
+            <div class="empty-state">
+                <span class="empty-icon">☼</span>
+                <p>Tu parte meteorológico aparecerá aquí</p>
+            </div>
+        </section>
+        <section class="favorites-panel" aria-labelledby="tituloFavoritas">
+            <div class="favorites-heading">
+                <div><p class="eyebrow">TUS LUGARES</p><h2 id="tituloFavoritas">Ciudades favoritas</h2></div>
+                <button id="guardarFavorita" class="favorite-save" type="button" disabled>☆ Guardar ciudad actual</button>
+            </div>
+            <p id="mensajeFavoritas" class="favorites-note" role="status">Busca una ciudad para guardarla y tenerla siempre a mano.</p>
+            <ul id="listaFavoritas" class="favorites-list"></ul>
+        </section>
+    </main>
+
+    <script src="meteo.js"></script>
+</body>
+</html>
